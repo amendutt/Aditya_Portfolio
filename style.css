@@ -790,3 +790,182 @@ footer p {
 #all-projects .title{
     font-weight: 600;
 }
+
+/* TABS SYSTEM */
+.tab-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2.5rem auto 1.5rem auto;
+    width: fit-content;
+}
+
+.tab-btn {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #a9a69e;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(210, 205, 193, 0.2);
+    padding: 0.8rem 2.2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tab-btn:hover {
+    color: #efebe2;
+    border-color: purple;
+    box-shadow: 0 0 15px rgba(128, 0, 128, 0.4);
+}
+
+.tab-btn.active {
+    color: #efebe2;
+    background: purple;
+    border-color: purple;
+    font-weight: 600;
+    box-shadow: 0 0 20px rgba(128, 0, 128, 0.6);
+}
+
+.tab-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.tab-content.active {
+    display: grid !important;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* VIDEO WORK CARD OVERRIDES & OVERLAYS */
+.work video {
+    height: 430px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    background-color: #000;
+}
+
+.work:hover video {
+    transform: scale(1.1);
+}
+
+.video-work {
+    position: relative;
+}
+
+.play-icon-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(128, 0, 128, 0.7);
+    color: #efebe2;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+    box-shadow: 0 0 15px rgba(128, 0, 128, 0.5);
+}
+
+.work:hover .play-icon-overlay {
+    transform: translate(-50%, -50%) scale(1.15);
+    background: rgba(128, 0, 128, 0.9);
+    opacity: 1;
+    box-shadow: 0 0 25px rgba(128, 0, 128, 0.8);
+}
+
+.play-icon-overlay svg {
+    margin-left: 4px; /* visually centered play arrow */
+}
+
+.video-subtitle {
+    font-size: 0.85rem;
+    color: #a9a69e;
+    margin-top: 0.3rem;
+    font-weight: 400;
+}
+
+/* LIGHTBOX MODAL */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 7, 7, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.lightbox-content img, .lightbox-content video {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#lightbox-caption {
+    color: #efebe2;
+    margin-top: 1.5rem;
+    font-size: 1.4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    max-width: 80%;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #efebe2;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 100000;
+    line-height: 1;
+}
+
+.lightbox-close:hover {
+    color: purple;
+    transform: scale(1.2);
+}
+

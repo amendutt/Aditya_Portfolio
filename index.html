@@ -188,34 +188,75 @@ Passionate about collaborative projects, I enjoy transforming ideas into creativ
     <section id="projects">
         <p class="section__text">Explore my</p>
         <h1 class="title">Work</h1>
-        <div class="work-list">
-            <a href="./Assets/img/call center.jpeg"><div class="work">
+        
+        <div class="tab-container">
+            <button class="tab-btn active" data-tab="images" data-target="projects">Images</button>
+            <button class="tab-btn" data-tab="videos" data-target="projects">Videos</button>
+        </div>
+
+        <div id="projects-images" class="work-list tab-content active" style="display: grid;">
+            <div class="work" data-src="./Assets/img/call center.jpeg" data-type="image" data-title="Connect Services">
                 <img src="./Assets/img/call center.jpeg" alt="Connect Services">
                 <div class="layer">
                     <h3>Connect Services</h3>
                 </div>
-            </div></a>
-            <a href="./Assets/img/Invitation Card 1.jpg"><div class="work">
+            </div>
+            <div class="work" data-src="./Assets/img/Invitation Card 1.jpg" data-type="image" data-title="Invitation">
                 <img src="./Assets/img/Invitation Card 1.jpg" alt="Invitation">
                 <div class="layer">
                     <h3>Invitation</h3>
                 </div>
-            </div></a>
-            <a href="./Assets/img/aI BOT 4.jpg"><div class="work">
+            </div>
+            <div class="work" data-src="./Assets/img/aI BOT 4.jpg" data-type="image" data-title="Creativity">
                 <img src="./Assets/img/aI BOT 4.jpg" alt="Creativity">
                 <div class="layer">
                     <h3>Creativity</h3>
                 </div>
-            </div></a>
-            
-        </div>
-
             </div>
         </div>
+
+        <div id="projects-videos" class="work-list tab-content" style="display: none;">
+            <div class="work video-work" data-src="./Assets/Video/join upsdm today.mp4" data-type="video" data-title="Join UPSDM Today">
+                <video src="./Assets/Video/join upsdm today.mp4" muted loop playsinline></video>
+                <div class="play-icon-overlay">
+                    <svg viewBox="0 0 24 24" width="30" height="30">
+                        <path fill="currentColor" d="M8 5v14l11-7z"/>
+                    </svg>
+                </div>
+                <div class="layer">
+                    <h3>Join UPSDM Today</h3>
+                    <p class="video-subtitle">Promotional Video</p>
+                </div>
+            </div>
+            <div class="work video-work" data-src="./Assets/Video/phir kya hua 2  v1.mp4" data-type="video" data-title="Phir Kya Hua 2">
+                <video src="./Assets/Video/phir kya hua 2  v1.mp4" muted loop playsinline></video>
+                <div class="play-icon-overlay">
+                    <svg viewBox="0 0 24 24" width="30" height="30">
+                        <path fill="currentColor" d="M8 5v14l11-7z"/>
+                    </svg>
+                </div>
+                <div class="layer">
+                    <h3>Phir Kya Hua 2</h3>
+                    <p class="video-subtitle">VFX & Motion Graphics</p>
+                </div>
+            </div>
+            <div class="work video-work" data-src="./Assets/Video/WhatsApp Video 2026-05-05 at 4.13.41 PM.mp4" data-type="video" data-title="Creative Reel">
+                <video src="./Assets/Video/WhatsApp Video 2026-05-05 at 4.13.41 PM.mp4" muted loop playsinline></video>
+                <div class="play-icon-overlay">
+                    <svg viewBox="0 0 24 24" width="30" height="30">
+                        <path fill="currentColor" d="M8 5v14l11-7z"/>
+                    </svg>
+                </div>
+                <div class="layer">
+                    <h3>Creative Reel</h3>
+                    <p class="video-subtitle">Typography Edit</p>
+                </div>
+            </div>
+        </div>
+
         <a href="projects.html">
-        <button class="btn btn-color-2">
-                See more
-            </button></a>
+            <button class="btn btn-color-2">See more</button>
+        </a>
     </section>
 
     <section id="contact">
@@ -263,6 +304,16 @@ Passionate about collaborative projects, I enjoy transforming ideas into creativ
         </nav><br>
         <p>Copyright &#169; 2025 Aditya Kumar. All Rights Resereved.</p>
     </footer>
+
+    <!-- Unified Portfolio Lightbox Modal -->
+    <div id="portfolio-lightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="" style="display: none;">
+            <video id="lightbox-video" src="" controls style="display: none;"></video>
+            <h3 id="lightbox-caption"></h3>
+        </div>
+    </div>
 
    <script defer src="script.js"></script> 
 </body>
